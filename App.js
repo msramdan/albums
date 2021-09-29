@@ -1,14 +1,25 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import HomeComponent from "./components/HomeComponent";
 
 export default function App() {
-  const [testing, setTesting] = useState();
+  const [testing, setTesting] = useState(500);
+
+  useEffect(() => {
+    console.log("Compenent did mount");
+  }, []);
+
+  useEffect(() => {
+    console.log("Compenent did update");
+  }, [testing])
+  
+
   return (
-    <View style={{flex:1}}>
+    <View style={{ flex: 1 }}>
       <View style={styles.container}>
         <Text style={styles.textStyle}>Albums</Text>
+        <Text>{testing}</Text>
       </View>
     </View>
   );
