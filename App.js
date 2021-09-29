@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import HomeComponent from "./components/HomeComponent";
 
 export default function App() {
-  const [testing, setTesting] = useState(500);
+  const [testing, setTesting] = useState(200);
 
   useEffect(() => {
     console.log("Compenent did mount");
@@ -12,8 +12,12 @@ export default function App() {
 
   useEffect(() => {
     console.log("Compenent did update");
+  }, [testing]);
+
+  useEffect(() => {
+      setTesting(100);
+      console.log("Compenent did unmount");      
   }, [testing])
-  
 
   return (
     <View style={{ flex: 1 }}>
