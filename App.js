@@ -5,27 +5,28 @@ import HomeComponent from "./components/HomeComponent";
 
 export default function App() {
   const [testing, setTesting] = useState();
-
   return (
-    <View style={styles.container}>
-      <HomeComponent testing="Masukan Nama" />
-
-      <TextInput
-        style={{ height: 40, width: 300, borderColor: "gray", borderWidth: 1 }}
-        onChangeText={(text) => setTesting(text)}
-      />
-      <Text>{testing}</Text>
-      <Image style={{ height:100, width:100 }} source={{uri:"https://www.kodingindonesia.com/wp-content/uploads/2017/07/Props-dan-State-di-React-Native.jpg"}} />
-      <StatusBar style="auto" />
+    <View style={{flex:1}}>
+      <View style={styles.container}>
+        <Text style={styles.textStyle}>Albums</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#f8f8f8",
     alignItems: "center",
     justifyContent: "center",
+    height: 60,
+    paddingTop: 15,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+  },
+
+  textStyle: {
+    fontSize: 28,
   },
 });
