@@ -1,29 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import AlbumsComponent from "./components/AlbumsComponent";
 import HomeComponent from "./components/HomeComponent";
 
+
 export default function App() {
-  const [testing, setTesting] = useState(200);
 
-  useEffect(() => {
-    console.log("Compenent did mount");
-  }, []);
-
-  useEffect(() => {
-    console.log("Compenent did update");
-  }, [testing]);
-
-  useEffect(() => {
-      setTesting(100);
-      console.log("Compenent did unmount");      
-  }, [testing])
 
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.container}>
         <Text style={styles.textStyle}>Albums</Text>
-        <Text>{testing}</Text>
+        <Text>Testing</Text>
+        <AlbumsComponent title="Album List"/>
       </View>
     </View>
   );
