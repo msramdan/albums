@@ -12,9 +12,8 @@ export default function App() {
     <View style={{ flex: 1 }}>
       <View style={styles.container}>
         <Text style={styles.textStyle}>Albums</Text>
-        <Text>Testing</Text>
-        <AlbumsComponent title="Album List"/>
       </View>
+      <AlbumsComponent/>
     </View>
   );
 }
